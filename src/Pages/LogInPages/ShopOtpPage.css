@@ -1,0 +1,89 @@
+.shop-otp-content {
+  padding: 60px 24px 40px 24px;
+  text-align: center;
+}
+
+.shop-user-email {
+  font-size: 18px;
+  color: #757575;
+  margin: 4px 0 40px 0;
+}
+
+.shop-otp-instruction {
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.otp-box {
+  width: 50px;
+  height: 64px;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Matches the purple focus in your screenshot */
+.otp-box:focus, .otp-box.active {
+  border: 2px solid #5a31f4;
+  padding: -1px; /* Offset for border thickness */
+}
+
+.shop-change-email-btn {
+  background: none;
+  border: none;
+  color: #111;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shop-change-email-btn:hover {
+  text-decoration: underline;
+}
+
+.shop-loading-content {
+  padding: 100px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.shop-avatar-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #5a31f4; /* Shop Pay Purple */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.shop-loading-text {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #111;
+}
+
+.shop-user-email-sub {
+  font-size: 16px;
+  color: #757575;
+}

@@ -1,0 +1,69 @@
+.artist-description-container {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 0;
+  border-top: 1px solid #000; /* Top border seen in image */
+  margin-top: 20px;
+}
+
+.artist-description-box {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.desc-title {
+  font-family: "Times New Roman", Times, serif; /* Serif font for the elegant look */
+  font-size: 2.2rem;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  color: #000;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.highlight-text {
+  font-weight: 900;
+  display: block;
+  margin-top: 5px;
+}
+
+.desc-text {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000;
+  max-width: 950px;
+  margin: 0 auto 30px;
+}
+
+.desc-footer {
+  margin-top: 20px;
+}
+
+.desc-link {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc; /* Subtle underline */
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.desc-link:hover {
+  border-bottom: 1px solid #000;
+  color: #000;
+}
+
+/* Responsive Scaling */
+@media (max-width: 768px) {
+  .desc-title {
+    font-size: 1.4rem;
+  }
+  .desc-text {
+    font-size: 14px;
+  }
+}

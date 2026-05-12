@@ -1,0 +1,9 @@
+/* Add this to App.css to push page content down past the fixed header */
+.page-content {
+    /* Use a value slightly greater than the combined height of TopHeader and MiddleHeader */
+    margin-top: 150px; /* Adjust this value (e.g., 100px, 150px, etc.) based on your header's actual height */
+    position: relative; 
+    z-index: 10; 
+    background-color: white; 
+    padding: 0; 
+}

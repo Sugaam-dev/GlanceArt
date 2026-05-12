@@ -1,0 +1,91 @@
+/* --- CSS Variables --- */
+:root {
+    --color-geometric-accent: #c19434; 
+    --color-geometric-bg: #FFFFFF;
+    --font-geometric-heading: 'Playfair Display', serif;
+}
+
+/* 1. Global/Wrapper Styling */
+.geometric-full-screen-wrapper {
+    background-color: var(--color-geometric-bg);
+    /* min-height: 100vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Main Content Wrapper */
+.geometric-art-section-container {
+    max-width: 1064px;
+    width: 90%;
+    text-align: center;
+    padding: 40px 20px; 
+    box-sizing: border-box;
+}
+
+/* --- Heading Styling --- */
+.geometric-title-gold-display {
+    font-family: var(--font-geometric-heading);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: 1.1;
+    font-size: 4em; 
+    color: var(--color-geometric-accent); 
+    
+    background: none; 
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    text-shadow: none; 
+}
+
+/* --- Introductory Text Styling --- */
+.geometric-intro-description {
+    color: black; 
+    font-size: 1.15em;
+    line-height: 1.6;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Separator Line --- */
+.geometric-accent-separator {
+    width: 80px;
+    height: 1px;
+    background-color: var(--color-geometric-accent); 
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+    .geometric-title-gold-display {
+        font-size: 3.5em; 
+        letter-spacing: 0.1em;
+    }
+
+    .geometric-intro-description {
+        font-size: 1em;
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .geometric-title-gold-display {
+        font-size: 2.2em;
+        letter-spacing: 0.08em;
+    }
+
+    .geometric-intro-description {
+        font-size: 0.9em;
+        margin-top: 15px;
+    }
+}

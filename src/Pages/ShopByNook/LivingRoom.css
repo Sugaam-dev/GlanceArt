@@ -1,0 +1,94 @@
+/* Container to provide spacing around the component */
+.lrv-outer-container {
+  padding: 20px;
+  width: 100%;
+}
+
+/* The relative wrapper that holds both image and text */
+.lrv-hero-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 600px;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden; /* Ensures image doesn't bleed past rounded corners */
+  display: flex;
+  align-items: flex-end; /* Places text card at the bottom */
+  padding: 40px;
+}
+
+/* Div containing the image */
+.lrv-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Sits behind the text */
+}
+
+/* Making the <img> tag behave like a background-image */
+.lrv-background-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This is the key property */
+  display: block;
+}
+
+/* The Text Card */
+.lrv-floating-card {
+  position: relative;
+  z-index: 2; /* Sits on top of the image container */
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  padding: 40px;
+  max-width: 460px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.lrv-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: #c59d5f;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.lrv-star {
+  margin-right: 6px;
+}
+
+.lrv-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #1a1a1a;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.lrv-desc {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Tablet & Mobile tweaks */
+@media (max-width: 768px) {
+  .lrv-hero-wrapper {
+    height: auto;
+    min-height: 500px;
+    padding: 20px;
+  }
+  .lrv-floating-card {
+    padding: 25px;
+    max-width: 100%;
+  }
+}

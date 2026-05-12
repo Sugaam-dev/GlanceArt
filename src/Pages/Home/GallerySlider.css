@@ -1,0 +1,247 @@
+/* --- Section and Container Layout --- */
+
+.gallery-slider-section {
+    padding: 60px 0; /* Vertical padding around the entire section */
+    background-color: #fff;
+}
+
+/* --- NEW STYLE: Centered Main Heading --- */
+.gallery-heading-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+    margin-bottom: 40px; /* Space between heading and boxes */
+}
+
+.gallery-main-heading {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #333; /* Dark text color */
+}
+/* -------------------------------------- */
+
+
+.gallery-slider-container {
+    max-width: 1200px; /* Reduced Max Width for smaller boxes */
+    margin: 0 auto;
+    padding: 0 30px; 
+    display: flex; 
+    gap: 30px;
+    min-height: 450px; /* Keep height consistent */
+}
+
+/* --- Left Side: Description Block Styles --- */
+
+.gallery-description-block {
+    flex: 1; 
+    display: flex;
+    align-items: center; 
+    color: white;
+    padding: 40px; /* Reduced padding inside the box */
+    border-radius: 4px; 
+    max-width: 50%; 
+    transition: background-color 0.5s ease-in-out; /* Smooth color change */
+}
+
+/* ---------------------------------------------------- */
+/* Dynamic Color Classes (Background Color of Box) */
+/* ---------------------------------------------------- */
+.color-terracotta {
+    background-color: #CD664B; 
+}
+
+.color-blue {
+    background-color: #386295; 
+}
+
+.color-green {
+    background-color: #4C978D; 
+}
+
+.color-gold {
+    background-color: #A38448; 
+}
+/* ---------------------------------------------------- */
+
+
+.description-content {
+    /* Text alignment and spacing for the content inside the block */
+}
+
+.title {
+    font-size: 38px; 
+    font-weight: 700;
+    margin: 10px 0 15px; 
+}
+
+.description-text {
+    font-size: 16px; 
+    line-height: 1.5;
+    margin-bottom: 20px; 
+}
+
+.shop-now-button {
+    border: none;
+    padding: 10px 25px; 
+    font-size: 13px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    background-color: white; /* Button background is always white */
+}
+
+/* Dynamic Button Text Color based on Box Color */
+.button-color-terracotta { color: #CD664B; }
+.button-color-blue { color: #386295; }
+.button-color-green { color: #4C978D; }
+.button-color-gold { color: #A38448; }
+
+.shop-now-button:hover {
+    opacity: 0.9;
+}
+
+
+/* --- Right Side: Image Carousel Styles --- */
+
+.gallery-image-carousel {
+    flex: 1; 
+    position: relative;
+    overflow: hidden; /* Ensures the zoomed image doesn't cause scrollbars */
+    border-radius: 4px;
+    max-width: 50%;
+    min-height: 450px; 
+}
+
+.slider-wrapperr {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; 
+}
+
+.slide {
+    height: 100%;
+}
+
+.framed-image-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ---------------------------------------------------- */
+/* 1. Define the Keyframe Animation for Slow Zoom */
+/* ---------------------------------------------------- */
+@keyframes slow-zoom {
+    0% {
+        transform: scale(1.0);
+    }
+    50% {
+        transform: scale(1.03); /* Subtle zoom in */
+    }
+    100% {
+        transform: scale(1.0); /* Zoom out back to normal */
+    }
+}
+
+
+/* ---------------------------------------------------- */
+/* 2. Apply the Animation to the Image */
+/* ---------------------------------------------------- */
+.carousel-image {
+    width: 100%;
+    height: 100%; 
+    display: block;
+    object-fit: cover; 
+    border-radius: 4px; 
+    
+    /* Apply the continuous animation */
+    animation: slow-zoom 8s ease-in-out infinite alternate; 
+}
+
+
+/* --- Navigation Arrows --- */
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: #333;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.nav-arrow:hover {
+    background: #fff;
+}
+
+.left-arrow {
+    left: 15px;
+}
+
+.right-arrow {
+    right: 15px;
+}
+
+
+/* ---------------------------------------------------- */
+/* Responsive Adjustments (Stacks on smaller screens) */
+/* ---------------------------------------------------- */
+@media (max-width: 900px) {
+    
+    .gallery-heading-wrapper {
+        margin-bottom: 20px; /* Reduced space on mobile */
+    }
+    
+    .gallery-slider-container {
+        flex-direction: column; 
+        padding: 0 20px;
+        min-height: auto; 
+    }
+    
+    .gallery-description-block,
+    .gallery-image-carousel {
+        max-width: 100%; 
+        flex: none; 
+        min-height: 350px; 
+    }
+
+    .gallery-description-block {
+        order: 2; 
+        padding: 30px 20px; 
+    }
+
+    .gallery-image-carousel {
+        order: 1; 
+        margin-bottom: 15px;
+    }
+
+    .title {
+        font-size: 30px; 
+    }
+    
+    .nav-arrow {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+}

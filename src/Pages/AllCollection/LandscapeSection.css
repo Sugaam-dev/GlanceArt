@@ -1,0 +1,98 @@
+/* --- Landscape Section Styles --- */
+.landscape-layout-root {
+  width: 100%;
+  /* min-height: 100vh; */
+  background-color: #FAF9F6; /* Warm off-white from image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.landscape-flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1400px;
+  width: 95%;
+  gap: 60px;
+}
+
+/* Image Column */
+.landscape-visual-column {
+  flex: 1.2; /* Takes slightly more space than text */
+}
+
+.landscape-main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Content Column */
+.landscape-info-column {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.landscape-text-content {
+  max-width: 520px;
+}
+
+/* Pill Badge */
+.landscape-pill-badge {
+  display: inline-block;
+  background-color: #c19434;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 25px;
+}
+
+/* Typography */
+.landscape-header-italic {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  font-style: italic; /* Specific to your provided image */
+  font-weight: 400;
+  line-height: 1.1;
+  color: #1a1a1a;
+  margin: 0 0 30px 0;
+  text-transform: uppercase;
+}
+
+.landscape-body-description {
+  font-family: 'Inter', sans-serif; /* Or your preferred sans-serif */
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #444;
+  margin: 0;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 1024px) {
+  .landscape-flex-container {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .landscape-info-column {
+    justify-content: center;
+  }
+
+  .landscape-header-italic {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landscape-header-italic {
+    font-size: 2.2rem;
+  }
+}

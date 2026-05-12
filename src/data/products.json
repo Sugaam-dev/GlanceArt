@@ -1,0 +1,83 @@
+[
+  {
+    "id": "p1",
+    "title": "Vacay Villa with Poolside Scene Wall Art Prints",
+    "price": 679.00,
+    "image": "/assets/images/product3.webp",
+    "description": "Gorgeous tropical print on gallery-quality paper. Multiple sizes available.",
+    "slug": "vacay-villa-poolside"
+  },
+  {
+    "id": "p2",
+    "title": "Under the Jute Hat, Bohemian Woman Fashion Painting",
+    "price": 679.00,
+    "image": "/assets/images/product2.webp",
+    "description": "Striking portrait with textured strokes and warm tones.",
+    "slug": "under-jute-hat"
+  },
+  {
+    "id": "p3",
+    "title": "Medina Sun Bedroom Wall Art",
+    "price": 679.00,
+    "image": "/assets/images/product3.webp",
+    "description": "Soft mediterranean tones, perfect for bedroom walls.",
+    "slug": "medina-sun-bedroom"
+  },
+  {
+    "id": "p4",
+    "title": "Tigers in Greece Botanical Wall Art",
+    "price": 679.00,
+    "image": "/assets/images/product4.webp",
+    "description": "Vivid greens and playful tigers for a lively wall statement.",
+    "slug": "tigers-in-greece"
+  },
+  {
+    "id": "p5",
+    "title": "Tiger Creek Bedroom Wall Art Prints",
+    "price": 679.00,
+    "image": "/assets/images/product5.webp",
+    "description": "Cool blue palette, serene waterfall and tiger composition.",
+    "slug": "tiger-creek-bedroom"
+  },
+  {
+    "id": "p6",
+    "title": "Vacay Villa with Poolside Scene Wall Art Prints",
+    "price": 679.00,
+    "image": "/assets/images/product6.webp",
+    "description": "Gorgeous tropical print on gallery-quality paper. Multiple sizes available.",
+    "slug": "vacay-villa-poolside"
+  },
+  {
+    "id": "p7",
+    "title": "Under the Jute Hat, Bohemian Woman Fashion Painting",
+    "price": 679.00,
+    "image": "/assets/images/product7.webp",
+    "description": "Striking portrait with textured strokes and warm tones.",
+    "slug": "under-jute-hat"
+  },
+  {
+    "id": "p8",
+    "title": "Medina Sun Bedroom Wall Art",
+    "price": 679.00,
+    "image": "/assets/images/product8.webp",
+    "description": "Soft mediterranean tones, perfect for bedroom walls.",
+    "slug": "medina-sun-bedroom"
+  },
+  {
+    "id": "p9",
+    "title": "Tigers in Greece Botanical Wall Art",
+    "price": 679.00,
+    "image": "/assets/images/product9.webp",
+    "description": "Vivid greens and playful tigers for a lively wall statement.",
+    "slug": "tigers-in-greece"
+  },
+  {
+    "id": "p10",
+    "title": "Tiger Creek Bedroom Wall Art Prints",
+    "price": 679.00,
+    "image": "/assets/images/product10.webp",
+    "description": "Cool blue palette, serene waterfall and tiger composition.",
+    "slug": "tiger-creek-bedroom"
+  }
+
+]

@@ -1,0 +1,223 @@
+/* CollectionsCarousel.css  (unique classnames start with cc_) */
+
+.cc_wrapper_unique001 {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.cc_inner_unique001 {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -70px;
+  padding-bottom: 20px;
+}
+
+/* heading */
+.cc_heading_unique001 {
+  color: #6b6b6b;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 8px 0 22px 4px;
+  font-weight: 600;
+}
+
+/* carousel container */
+.cc_carouselWrap_unique001 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* nav buttons */
+.cc_navBtn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+  color: #222;
+  z-index: 10;
+}
+.cc_leftBtn_unique001 {
+  margin-right: 16px;
+}
+.cc_rightBtn_unique001 {
+  margin-left: 16px;
+}
+
+/* scroller: horizontal scroll with snap */
+.cc_scroller_unique001 {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 24px;               /* spacing between cards */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px;
+  scrollbar-width: none;   /* firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  width: 100%;
+}
+
+/* hide native scrollbar (webkit) */
+.cc_scroller_unique001::-webkit-scrollbar { display: none; }
+
+/* card */
+.cc_card_unique001 {
+  scroll-snap-align: start;
+  min-width: 220px;
+  width: 220px;
+  background: transparent;
+  border-radius: 18px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* clickable link wrapper expands to card size */
+.cc_cardLink_unique001 {
+  display: block;
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background: #f7f7f7;
+}
+
+/* image area (background cover) */
+.cc_imgWrap_unique001 {
+  width: 100%;
+  height: 240px;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(10,10,10,0.06);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+/* pill label that sits on bottom-left of card */
+.cc_labelPill_unique001 {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  background: rgba(255,255,255,0.95);
+  padding: 9px 14px;
+  border-radius: 22px;
+  font-weight: 600;
+  font-size: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+/* hover effect */
+.cc_cardLink_unique001:hover .cc_imgWrap_unique001 {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(10,10,10,0.12);
+}
+
+/* CTA area below carousel */
+.cc_ctaWrap_unique001 {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* small heading */
+.cc_more_unique001 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* browse button */
+.cc_browseBtn_unique001 {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(0,0,0,0.12);
+  text-decoration: none;
+  color: #111;
+  background: #fff;
+  font-weight: 700;
+  transition: transform 150ms, background 150ms;
+}
+.cc_browseBtn_unique001:hover { transform: translateY(-3px); }
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* 1024px and below: larger cards, show ~4 cards in viewport */
+@media (max-width: 1024px) {
+  .cc_card_unique001 { min-width: 260px; width: 260px; }
+  .cc_imgWrap_unique001 { height: 280px; }
+}
+
+/* 768px and below: show ~2-3 cards in viewport */
+@media (max-width: 768px) {
+  .cc_wrapper_unique001 { padding: 36px 16px; }
+  .cc_leftBtn_unique001, .cc_rightBtn_unique001 { display: block; }
+  .cc_card_unique001 { min-width: 220px; width: 220px; }
+  .cc_imgWrap_unique001 { height: 220px; }
+}
+
+/* 420px and below: single/partial card, card becomes wider & centered */
+/* @media (max-width: 420px) {
+  .cc_scroller_unique001 { gap: 16px; }
+  .cc_card_unique001 { min-width: calc(100% - 56px); width: calc(100% - 56px); }
+  .cc_imgWrap_unique001 { height: 200px; border-radius: 14px; }
+  .cc_navBtn { width: 44px; height: 44px; font-size: 22px; }
+  .cc_heading_unique001 { margin-left: 8px; font-size: 14px; }
+  .cc_browseBtn_unique001 { padding: 10px 20px; }
+} */
+
+/* FINAL FIX FOR <420px — Prevent tall skinny image bug */
+@media (max-width: 420px) {
+
+  /* Force stable card size */
+  .cc_card_unique001 {
+    min-width: 260px !important;
+    max-width: 260px !important;
+    width: 260px !important;
+  }
+
+  /* Force stable image aspect */
+  .cc_imgWrap_unique001 {
+    height: 200px !important;
+    min-height: 200px !important;
+    width: 100% !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 14px;
+  }
+
+  /* Fix scroller spacing */
+  .cc_scroller_unique001 {
+    gap: 16px !important;
+  }
+
+  /* Adjust left/right buttons */
+  .cc_navBtn {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 320px){
+    .cc_imgWrap_unique001{
+        width: 80% !important;
+    }
+}
+
+
+

@@ -1,0 +1,51 @@
+/* Container fixed to the viewport */
+.fixed-social-sidebar {
+  position: fixed; 
+  right: 20px;    
+  top: 50%;       
+  transform: translateY(-50%); 
+  z-index: 999999; 
+  pointer-events: none; 
+}
+
+/* The white pill background */
+.social-pill {
+  pointer-events: auto; 
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px 6px;
+  border-radius: 50px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.s-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.s-link:hover {
+  transform: scale(1.15);
+  opacity: 0.8;
+}
+
+/* Updated Colors */
+.facebook { color: #1877F2; }
+.instagram { color: #E4405F; }
+.youtube { color: #FF0000; }
+
+/* Responsive: Keep it clean on mobile */
+@media (max-width: 768px) {
+  .fixed-social-sidebar {
+    right: 12px;
+  }
+  .social-pill {
+    padding: 20px 10px;
+    gap: 18px;
+  }
+}

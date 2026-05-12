@@ -1,0 +1,109 @@
+/* --- CSS Variables --- */
+:root {
+    /* Only one color is defined, as requested, to be used everywhere except the background */
+    --color-primary-accent: #c19434; 
+    
+    /* White background */
+    --color-bg-light: #FFFFFF;
+    
+    --font-heading: 'Playfair Display', serif;
+}
+
+/* 1. Global/Wrapper Styling for Full Screen Center and Background */
+.full-screen-center-wrapper {
+    background-color: var(--color-bg-light);
+    /* min-height: 100vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Main Content Wrapper (Limits width) */
+.botanical-art-section-wrapper {
+    max-width: 1064px;
+    width: 90%;
+    text-align: center;
+    padding: 40px 20px; 
+    box-sizing: border-box;
+}
+
+/* --- Heading Styling: Solid Color #c19434 --- */
+.section-title-gold-effect {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: 1.1;
+    font-size: 4em; 
+
+    /* KEY CHANGE: Solid color */
+    color: #c19434; 
+    
+    /* Ensure all gradient/clip properties are removed */
+    background: none; 
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    
+    /* Removing text-shadow for a cleaner, single-color look */
+    text-shadow: none; 
+}
+
+/* --- Introductory Text Styling: Solid Color #c19434 --- */
+.introductory-text-description {
+    /* KEY CHANGE: Use the single accent color */
+    color: black; 
+    
+    font-size: 1.15em;
+    line-height: 1.6;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Separator Line: Solid Color #c19434 --- */
+.section-separator-line {
+    width: 80px;
+    height: 1px;
+    /* KEY CHANGE: Use the single accent color */
+    background-color: var(--color-primary-accent); 
+    
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* --- Responsive Adjustments (768px and 420px) --- */
+
+@media (max-width: 768px) {
+    .section-title-gold-effect {
+        font-size: 3.5em; 
+        letter-spacing: 0.1em;
+    }
+
+    .introductory-text-description {
+        font-size: 1em;
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .section-title-gold-effect {
+        font-size: 2.2em;
+        letter-spacing: 0.08em;
+    }
+
+    .introductory-text-description {
+        font-size: 0.9em;
+        margin-top: 15px;
+    }
+}

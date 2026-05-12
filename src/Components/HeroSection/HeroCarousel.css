@@ -1,0 +1,174 @@
+/* ---------------- TEXT OVERLAY ---------------- */
+.hero-text-block {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+/* Fade + slide animation */
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideUp 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}
+
+/* Subtitle */
+.artist-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Main Title */
+.artist-name {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Description */
+.artist-description {
+    margin-top: 5px;
+    font-size: 1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------------- BUTTONS ---------------- */
+.hero-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 5px 25px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    letter-spacing: 5px;
+}
+
+.btn-primary {
+    background: white;
+    color: black;
+}
+
+.btn-primary:hover {
+    background: #f2f2f2;
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 991px) {
+    .artist-name {
+        font-size: 2.8rem;
+    }
+
+    .artist-description {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .artist-name {
+        font-size: 2.2rem;
+    }
+
+    .artist-description {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
+
+/* MAKE CAROUSEL STICK TO TOP */
+.hero-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;  /* FULL SCREEN HEIGHT */
+    overflow: hidden;
+    top: -190px;
+    left: 0;
+    z-index: 1; /* Push behind navbar */
+}
+
+/* CarouseI itself should ALSO fill screen */
+.hero-carousel {
+    height: 100%;
+}
+
+.hero-carousel .carousel-item {
+    height: 100vh;
+}
+
+.hero-carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---- TEXT BLOCK (your existing code unchanged) ---- */
+
+.hero-text-block {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+/* Fade animation */
+.animate {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideUp 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0px); }
+}
+

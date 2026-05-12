@@ -1,0 +1,216 @@
+/* Define a custom property for the accent color */
+:root {
+    --accent-gold: #c28b57; /* A shade matching the screenshot's dots/dates */
+}
+
+/* ======================================= */
+/* BASE STYLES (Desktop First: > 1024px)   */
+/* ======================================= */
+
+.about-journey {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header Styles */
+.about-journey__header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.about-journey__title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.about-journey__subtitle {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Timeline Container */
+.about-journey__timeline {
+    position: relative;
+}
+
+/* Vertical Line */
+.about-journey__timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #e0e0e0; /* Light gray line */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Timeline Event Styling */
+.about-journey__event {
+    padding: 10px 0;
+    position: relative;
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+/* Positioning for Left Events */
+.about-journey__event--left {
+    left: 0;
+    padding-right: 60px; 
+    text-align: right;
+}
+
+/* Positioning for Right Events */
+.about-journey__event--right {
+    left: 50%;
+    padding-left: 60px; 
+    text-align: left;
+}
+
+/* Date Text (Using Accent Color) */
+.about-journey__date {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: var(--accent-gold); /* APPLYING ACCENT COLOR */
+}
+
+/* Content Box (Title/Description) */
+.about-journey__content {
+    background-color: #fff;
+    padding: 5px 0;
+}
+
+.about-journey__content-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.about-journey__content-description {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Connector Dot Styling (Using Accent Color) */
+.about-journey__connector-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    right: -7px; 
+    top: 25px;
+    background-color: #fff; /* White center */
+    border: 2px solid var(--accent-gold); /* APPLYING ACCENT COLOR */
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Adjust Dot Position for Right Events */
+.about-journey__event--right .about-journey__connector-dot {
+    left: -7px; 
+}
+
+
+/* ======================================= */
+/* RESPONSIVENESS (1024px)                 */
+/* ======================================= */
+
+@media (max-width: 1024px) {
+    .about-journey {
+        padding: 40px 15px;
+    }
+
+    .about-journey__title {
+        font-size: 28px;
+    }
+}
+
+
+/* ======================================= */
+/* RESPONSIVENESS (768px - Tablet)         */
+/* ======================================= */
+
+/* Stack events vertically for better mobile view */
+@media (max-width: 768px) {
+    
+    /* Move the vertical line to the left side */
+    .about-journey__timeline::after {
+        left: 20px;
+    }
+
+    /* Reset width and positioning for single column */
+    .about-journey__event {
+        width: 100%;
+        left: 0;
+        padding-left: 60px; 
+        padding-right: 0;
+        text-align: left; /* Align all text left */
+        margin-bottom: 40px;
+    }
+
+    /* Reset alignment for left events (now all are aligned left) */
+    .about-journey__event--left {
+        text-align: left;
+    }
+    
+    /* Adjust dot position to be always on the left line */
+    .about-journey__connector-dot {
+        left: 13px; /* Position relative to the new timeline line */
+        right: auto;
+    }
+    
+    /* Ensure the content aligns well */
+    .about-journey__content-title {
+        font-size: 17px;
+    }
+}
+
+
+/* ======================================= */
+/* RESPONSIVENESS (420px - Mobile)         */
+/* ======================================= */
+
+@media (max-width: 420px) {
+    .about-journey__header {
+        margin-bottom: 40px;
+    }
+    
+    .about-journey__title {
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+    
+    .about-journey__subtitle {
+        font-size: 14px;
+    }
+    
+    /* Slightly reduce padding and size on mobile */
+    .about-journey__event {
+        padding-left: 45px; 
+        margin-bottom: 30px;
+    }
+
+    /* Move the line and dot closer to the edge */
+    .about-journey__timeline::after {
+        left: 10px;
+    }
+    
+    .about-journey__connector-dot {
+        left: 3px;
+    }
+
+    .about-journey__content-description {
+        font-size: 14px;
+    }
+}

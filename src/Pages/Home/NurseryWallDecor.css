@@ -1,0 +1,143 @@
+.nwd-wrapper {
+  width: 100%;
+  padding: 40px 5%;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.nwd-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+.nwd-title span {
+  font-size: 28px;
+}
+
+.nwd-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Card */
+.nwd-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.nwd-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image section */
+.nwd-img-wrapper {
+  position: relative;
+}
+
+.nwd-img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Discount Badge */
+.nwd-discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: black;
+  color: #fff;
+  padding: 6px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Details section */
+.nwd-details {
+  padding: 18px;
+  text-align: left;
+}
+
+.nwd-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Ratings */
+.nwd-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffcc00;
+  font-size: 16px;
+}
+
+.nwd-reviews {
+  color: #333;
+  font-size: 14px;
+}
+
+/* Prices */
+.nwd-price-row {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nwd-old-price {
+  text-decoration: line-through;
+  color: #777;
+  font-size: 15px;
+}
+
+.nwd-new-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* View All Button */
+.nwd-view-all {
+  margin-top: 40px;
+  background: #b5873f;      /* brown color */
+  color: #fff;
+  padding: 14px 40px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nwd-view-all:hover {
+  background: #966f32;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .nwd-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .nwd-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nwd-img {
+    height: 260px;
+  }
+}

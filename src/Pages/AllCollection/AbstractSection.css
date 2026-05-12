@@ -1,0 +1,126 @@
+/* MAIN WRAPPER */
+.abstract-hero {
+  display: flex;
+  width: 100%;
+  min-height: 600px;
+  background: #faf7ef;
+  overflow: hidden;
+}
+
+/* LEFT IMAGE SECTION */
+.abstract-hero-left {
+  width: 55%;
+}
+
+.abstract-hero-left img {
+  width: 100%;
+  height: 100%;
+ 
+  display: block;
+}
+
+/* RIGHT CONTENT SECTION */
+.abstract-hero-right {
+  width: 45%;
+  padding: 80px 60px;
+  background: #faf7ef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* GOLDEN BADGE */
+.abstract-badge {
+  background: #cba443;
+  padding: 10px 26px;
+  border-radius: 30px;
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 32px;
+}
+
+/* TITLE */
+.abstract-title {
+  font-family: "Playfair Display", serif;
+  font-size: 58px;
+  font-weight: 600;
+  line-height: 1.05;
+  margin: 0 0 28px;
+  color: #111;
+  font-style: italic;
+}
+
+/* DESCRIPTION */
+.abstract-description {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 650px;
+  color: #444;
+}
+
+
+/* =========================== RESPONSIVE =========================== */
+
+/* ----------- 1068px ----------- */
+@media (max-width: 1068px) {
+  .abstract-hero-right {
+    padding: 60px 40px;
+  }
+
+  .abstract-title {
+    font-size: 46px;
+  }
+
+  .abstract-description {
+    font-size: 16px;
+  }
+}
+
+/* ----------- Tablet 768px ----------- */
+@media (max-width: 768px) {
+  .abstract-hero {
+    flex-direction: column;
+  }
+
+  .abstract-hero-left,
+  .abstract-hero-right {
+    width: 100%;
+  }
+
+  .abstract-hero-left {
+    height: 320px;
+  }
+
+  .abstract-title {
+    font-size: 40px;
+  }
+
+  .abstract-description {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+}
+
+/* ----------- Mobile 420px ----------- */
+@media (max-width: 420px) {
+  .abstract-hero-right {
+    padding: 32px 20px;
+  }
+
+  .abstract-badge {
+    font-size: 12px;
+    padding: 8px 18px;
+  }
+
+  .abstract-title {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+
+  .abstract-description {
+    font-size: 14px;
+  }
+}

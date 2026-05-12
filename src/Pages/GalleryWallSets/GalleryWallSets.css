@@ -1,0 +1,224 @@
+/* Unique Container for Gallery Wall Hero */
+.gws-hero-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #f4f4f4;
+}
+
+.gws-background-wrapper {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Adjust height based on your layout needs */
+  min-height: 400px;
+}
+
+/* Hero Background Image */
+.gws-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Overlay Styling */
+.gws-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.15); /* Light overlay for text legibility */
+  padding: 0 20px;
+}
+
+.gws-text-wrapper {
+  text-align: center;
+  color: #ffffff;
+  max-width: 900px;
+}
+
+/* Typography based on screenshot */
+.gws-main-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 52px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.gws-sub-description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .gws-main-title {
+    font-size: 42px;
+    letter-spacing: 3px;
+  }
+  .gws-background-wrapper {
+    height: 50vh;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .gws-main-title {
+    font-size: 32px;
+    letter-spacing: 2px;
+  }
+  .gws-sub-description {
+    font-size: 15px;
+  }
+  .gws-background-wrapper {
+    height: 40vh;
+    min-height: 300px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .gws-main-title {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+  .gws-sub-description {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
+/* --- Gallery Wall Filters Section --- */
+
+.gws-filters-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 40px 20px;
+}
+
+.gws-filters-header {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.gws-filters-title {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.gws-filters-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 4-column Grid */
+.gws-filters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gws-filter-card {
+  width: 100%;
+}
+
+.gws-filter-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Square cards as seen in screenshot */
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.gws-filter-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Label Overlay */
+.gws-filter-label-overlay {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+}
+
+.gws-filter-label {
+  background-color: rgba(26, 26, 26, 0.9);
+  color: #ffffff;
+  padding: 8px 16px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  border-radius: 4px; /* Matches the slightly rounded labels in screenshot */
+}
+
+/* --- Inspiration Section --- */
+
+.gws-inspiration-section {
+  text-align: center;
+  padding: 60px 20px 100px 20px;
+}
+
+.gws-inspiration-text {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.gws-browse-button {
+  background-color: #ffffff;
+  border: 1px solid #d1d1d1;
+  padding: 12px 35px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  border-radius: 25px; /* Rounded pill shape from screenshot */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gws-browse-button:hover {
+  background-color: #f9f9f9;
+  border-color: #1a1a1a;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 1024px) {
+  .gws-filters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gws-filters-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .gws-main-title {
+    font-size: 28px;
+  }
+  .gws-inspiration-text {
+    font-size: 18px;
+  }
+}

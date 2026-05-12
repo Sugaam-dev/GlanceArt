@@ -1,0 +1,451 @@
+/* ==========================================
+   1. BASE STYLES (Desktop / Transparent)
+   ========================================== */
+
+.custom-navbar {
+  background: transparent !important;
+  width: 100%;
+  z-index: 10;
+  transition: all 0.3s;
+  padding: 10px 0;
+}
+
+/* Center menu items */
+.navbar-items {
+  gap: 25px;
+}
+
+/* Default menu text style (White for Home Page Hero) */
+.nav-item-custom,
+.nav-item-custom > a,
+.dropdown-custom > a,
+.navbar-nav .nav-link {
+  color: white !important;
+  font-size: 13px;
+  /* letter-spacing: 1px; */
+  font-weight: 700;
+  position: relative;
+  text-decoration: none;
+   font-family: 'Playfair Display', serif; 
+  font-style: italic; 
+}
+
+/* Hover underline effect */
+.nav-item-custom::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background: white;
+  left: 0;
+  bottom: -2px;
+  transition: 0.3s;
+}
+
+.nav-item-custom:hover::after {
+  width: 100%;
+}
+
+/* ==========================================
+   2. SCROLLED / WHITE MODE STYLES
+   ========================================== */
+
+/* Change text color to black when scrolled or on other pages */
+.scrolled-nav .nav-item-custom,
+.scrolled-nav .nav-item-custom > a,
+.scrolled-nav .dropdown-custom > a,
+.scrolled-nav .navbar-nav .nav-link {
+  color: #000 !important;
+}
+
+.scrolled-nav .nav-item-custom::after {
+  background: #000;
+}
+
+/* ==========================================
+   3. COLLECTIONS DROPDOWN (Grid Design)
+   ========================================== */
+
+.collections-dropdown .dropdown-menu {
+  width: 620px !important;
+  padding: 20px 15px;
+  background: white !important;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border: none;
+}
+
+.collection-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 5px 10px;
+}
+
+.collection-item {
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: #222 !important;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.collection-item img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+  transition: transform 0.3s ease;
+}
+
+.collection-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   5. ARTISTS DROPDOWN (Mega Menu Design)
+   ========================================== */
+
+/* Adjust width for the Artists Mega Menu */
+.artists-dropdown .dropdown-menu {
+  width: 650px !important; /* Wider to accommodate both sections */
+  padding: 10px;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+.artists-mega-menu {
+  display: flex;
+  gap: 40px;
+}
+
+.artist-section {
+  flex: 1;
+}
+
+.artist-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: left;
+}
+
+.artist-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.artist-item {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.artist-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Square images with rounded corners as per screenshot */
+.artist-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 0; /* Label connects directly below */
+}
+
+/* The beige label box under the image */
+.artist-label {
+  display: block;
+  background-color: #f5f1ee; /* Light beige from screenshot */
+  color: #333;
+  padding: 10px 5px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive adjustments for Mobile */
+@media (max-width: 991px) {
+  .artists-dropdown .dropdown-menu {
+    width: 100% !important;
+    transform: none !important;
+    left: 0 !important;
+  }
+  
+  .artists-mega-menu {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .artist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  .artist-label {
+    font-size: 11px;
+    padding: 5px;
+  }
+}
+
+/* ==========================================
+   6. CUSTOM ART DROPDOWN (Mega Menu Design)
+   ========================================== */
+
+/* Wide menu to fit both Map sections */
+.custom-art-dropdown .dropdown-menu {
+  width: 650px !important; 
+  padding: 10px;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.custom-art-mega-menu {
+  display: flex;
+  gap: 40px;
+}
+
+.custom-section {
+  flex: 1;
+}
+
+.custom-section-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #000;
+  text-align: left;
+  font-family: inherit;
+}
+
+.custom-grid {
+  display: flex;
+  gap: 15px;
+}
+
+.custom-item {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.custom-item:hover {
+  transform: translateY(-5px);
+}
+
+.custom-item img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Matching the light beige label from the screenshot */
+.custom-label {
+  display: block;
+  background-color: #f5f1ee; 
+  color: #333;
+  padding: 10px 5px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile Responsiveness for Custom Art */
+@media (max-width: 991px) {
+  .custom-art-dropdown .dropdown-menu {
+    width: 100% !important;
+    transform: none !important;
+    left: 0 !important;
+    position: static !important;
+  }
+  
+  .custom-art-mega-menu {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .custom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+}
+
+/* ==========================================
+   7. SHOP BY NOOK DROPDOWN
+   ========================================== */
+
+/* Aligning the menu to the right relative to the link */
+.nook-dropdown .dropdown-menu {
+  min-width: 240px !important;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  padding: 15px 0;
+  left: auto !important;
+  right: 0 !important;
+}
+
+.nook-item {
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  color: #000 !important;
+  padding: 12px 25px !important;
+  transition: background 0.2s ease;
+}
+
+.nook-item:hover {
+  background-color: #f9f9f9 !important;
+}
+
+/* Specific styling for the Bar Nook with Badge */
+.nook-new-item {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.new-badge {
+  background-color: #619af2; /* Light blue from screenshot */
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Mobile adjustments to keep the blue badge visible */
+@media (max-width: 991px) {
+  .nook-dropdown .dropdown-menu {
+    width: 100% !important;
+    position: static !important;
+    box-shadow: none !important;
+  }
+}
+/* ==========================================
+   4. RESPONSIVE DESIGN (768px and Below)
+   ========================================== */
+
+@media (max-width: 991px) {
+    /* Ensure burger menu lines are visible */
+    .navbar-toggler {
+        border: 1px solid currentColor !important;
+    }
+
+    /* Make burger icon black when on white background */
+    .scrolled-nav .navbar-toggler-icon {
+        filter: invert(1); 
+    }
+
+    /* Mobile Menu Container */
+    .navbar-collapse {
+        background-color: #fff !important; /* Always white on mobile for readability */
+        padding: 20px;
+        margin-top: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Force mobile links to be black */
+    .navbar-collapse .nav-link, 
+    .navbar-collapse .dropdown-item,
+    .navbar-collapse .nav-item-custom,
+    .navbar-collapse .dropdown-toggle {
+        color: #000 !important;
+        text-align: left;
+        padding: 12px 0 !important;
+        border-bottom: 1px solid #f5f5f5;
+        width: 100%;
+    }
+
+    /* Reset the Underline for mobile */
+    .nav-item-custom::after {
+        display: none;
+    }
+
+    /* Collections Grid - 2 items per row on Mobile */
+    .collection-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+        width: 100% !important;
+        padding: 15px 0 !important;
+    }
+
+    .collections-dropdown .dropdown-menu {
+        width: 100% !important;
+        position: static !important; /* Stack inside the menu */
+        box-shadow: none !important;
+        padding: 10px !important;
+    }
+
+    .collection-item img {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .collection-item span {
+        font-size: 12px !important;
+    }
+}
+
+/* Specifically for small mobile screens (425px) */
+@media (max-width: 425px) {
+    .navbar-items {
+        gap: 10px;
+    }
+    
+    .collection-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: #fff !important;
+        position: fixed; /* Changed from absolute to fixed */
+        top: 80px; /* Adjust this to match your header height exactly */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px); /* Fill the rest of the screen */
+        overflow-y: auto !important; /* Enable scrolling inside the menu */
+        padding: 20px;
+        z-index: 9999;
+        display: block;
+    }
+    
+    /* Ensure the actual list of items is scrollable */
+    .navbar-nav {
+        padding-bottom: 100px; /* Extra space at bottom for better mobile feel */
+    }
+}
+

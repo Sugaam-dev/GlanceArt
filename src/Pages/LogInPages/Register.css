@@ -1,0 +1,102 @@
+.auth-page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.auth-card {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.auth-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 32px;
+  align-items: center;
+}
+
+.shop-logo {
+  color: #5a31f4;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 24px;
+}
+
+.brand-subtext {
+  color: #707070;
+  font-size: 14px;
+}
+
+.auth-card-content {
+  padding: 0 40px 48px;
+  text-align: center;
+}
+
+.auth-title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+}
+
+.auth-subtitle {
+  color: #707070;
+  font-size: 16px;
+  margin-bottom: 32px;
+}
+
+.auth-subtitle a {
+  color: #5a31f4;
+  text-decoration: none;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group-row {
+  display: flex;
+  gap: 12px;
+}
+
+.floating-label-group input {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+  border: 1.5px solid #e1e1e1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.floating-label-group input:focus {
+  border-color: #5a31f4;
+}
+
+.auth-continue-btn {
+  background-color: #5a31f4;
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: opacity 0.2s;
+}
+
+.auth-continue-btn:hover {
+  opacity: 0.9;
+}

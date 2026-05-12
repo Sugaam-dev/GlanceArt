@@ -1,0 +1,175 @@
+/* src/components/NewCollectionHero.css
+   Unique classnames: prefix nc_ to avoid collisions
+*/
+
+/* Wrapper fills width, hero height responsive */
+.nc_wrapper_unique001 {
+  position: relative;
+  width: 100%;
+  height: 680px; /* default desktop height */
+  overflow: hidden;
+  display: block;
+  background: #f5f3f1;
+  top: -150px; /* fallback color while image loads */
+}
+
+/* Background image layer */
+.nc_bg_unique001 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  transition: transform 18s linear;
+  /* subtle slow zoom */
+  animation: nc_zoom 16s ease-in-out infinite alternate;
+}
+@keyframes nc_zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* subtle overlay so the white card pops on left */
+.nc_overlay_unique001 {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.2) 25%, rgba(0,0,0,0.12) 100%);
+  pointer-events: none;
+}
+
+/* White rounded card that sits over the bottom-left of the hero */
+.nc_card_unique001 {
+  position: absolute;
+  left: 40px;
+  bottom: 60px;
+  width: 400px;
+  max-width: calc(50% - 40px);
+  background: linear-gradient(180deg, #ffffff 0%, #f9f6f4 100%);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 18px 40px rgba(20, 20, 20, 0.18);
+  color: #1b1b1b;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* small label at top-left of card */
+.nc_label_unique001 {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #b86a52;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* big title */
+.nc_title_unique001 {
+  margin: 2px 0 6px 0;
+  font-size: 20px;
+  line-height: 1.02;
+  font-weight: 700;
+  color: #151515;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+/* paragraph text */
+.nc_text_unique001 {
+  margin: 0;
+  color: #555;
+  font-size: 10px;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+/* CTA group */
+.nc_ctaGroup_unique001 {
+  margin-top: 10px;
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+/* primary CTA: filled */
+.nc_cta_primary_unique001 {
+  display: inline-block;
+  padding: 10px 18px;
+  background: #111;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+}
+
+/* secondary CTA: outline */
+.nc_cta_secondary_unique001 {
+  display: inline-block;
+  padding: 10px 16px;
+  background: transparent;
+  color: #111;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Hover states */
+.nc_cta_primary_unique001:hover { opacity: 0.92; transform: translateY(-2px); }
+.nc_cta_secondary_unique001:hover { background: rgba(0,0,0,0.04); transform: translateY(-2px); }
+
+/* --------------- RESPONSIVE BREAKPOINTS --------------- */
+
+/* For 1024px and below (tablet landscape) */
+@media (max-width: 1024px) {
+  .nc_wrapper_unique001 { height: 600px; }
+  .nc_card_unique001 {
+    left: 32px;
+    bottom: 48px;
+    width: 400px;
+    padding: 24px;
+  }
+  .nc_title_unique001 { font-size: 32px; }
+}
+
+/* For 768px and below (tablet portrait) */
+@media (max-width: 768px) {
+  .nc_wrapper_unique001 { height: 520px; }
+  .nc_card_unique001 {
+    left: 24px;
+    bottom: 36px;
+    width: 360px;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .nc_title_unique001 { font-size: 26px; }
+  .nc_text_unique001 { font-size: 14px; }
+}
+
+/* For mobile narrow screens (420px and below) */
+@media (max-width: 420px) {
+  .nc_wrapper_unique001 { height: 420px; }
+
+  /* move card to center-bottom and make it full width with safe margins */
+  .nc_card_unique001 {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: calc(100% - 40px);
+    max-width: none;
+    padding: 18px;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nc_label_unique001 { margin: 0 auto; }
+  .nc_title_unique001 { font-size: 20px; line-height: 1.05; }
+  .nc_text_unique001 { font-size: 13px; }
+  .nc_ctaGroup_unique001 { flex-direction: column; width: 100%; }
+  .nc_cta_primary_unique001,
+  .nc_cta_secondary_unique001 { width: 100%; text-align: center; }
+}

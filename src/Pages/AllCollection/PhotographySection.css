@@ -1,0 +1,90 @@
+/* --- CSS Variables --- */
+:root {
+    --color-primary-accent: #c19434; 
+    --color-bg-light: #FFFFFF;
+    --font-heading: 'Playfair Display', serif;
+}
+
+/* 1. Global/Wrapper Styling */
+.photo-viewport-center-container {
+    background-color: var(--color-bg-light);
+    /* min-height: 100vh; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Main Content Wrapper */
+.photography-art-content-wrapper {
+    max-width: 1064px;
+    width: 90%;
+    text-align: center;
+    padding: 40px 20px; 
+    box-sizing: border-box;
+}
+
+/* --- Heading Styling --- */
+.photo-title-accent-style {
+    font-family: var(--font-heading);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0;
+    line-height: 1.1;
+    font-size: 4em; 
+    color: #c19434; 
+    background: none; 
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    text-shadow: none; 
+}
+
+/* --- Introductory Text Styling --- */
+.photo-introductory-paragraph {
+    color: black; 
+    font-size: 1em;
+    line-height: 1.6;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Separator Line --- */
+.photo-bottom-separator-divider {
+    width: 80px;
+    height: 1px;
+    background-color: var(--color-primary-accent); 
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+/* --- Responsive Adjustments --- */
+
+@media (max-width: 768px) {
+    .photo-title-accent-style {
+        font-size: 3.5em; 
+        letter-spacing: 0.1em;
+    }
+
+    .photo-introductory-paragraph {
+        font-size: 1em;
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 420px) {
+    .photo-title-accent-style {
+        font-size: 2.2em;
+        letter-spacing: 0.08em;
+    }
+
+    .photo-introductory-paragraph {
+        font-size: 0.9em;
+        margin-top: 15px;
+    }
+}

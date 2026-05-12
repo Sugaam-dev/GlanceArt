@@ -1,0 +1,287 @@
+/* =========================
+  Product Filter / Grid CSS
+  Single-file replacement
+  (Use exact classnames: pf_*)
+========================= */
+
+/* reset for this block to avoid collisions */
+.pf_container_main, .pf_container_main * {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- container ---------- */
+.pf_container_main {
+  width: 100%;
+  padding: 28px 5%;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: #111;
+  background: #fff;
+}
+
+/* ---------- top bar: filter / count / sort ---------- */
+.pf_topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+/* left: filter button */
+.pf_filter_btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* center: product count */
+.pf_product_count {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* right: sort select */
+.pf_sort_dropdown { position: relative; }
+.pf_sort_select {
+  padding: 10px 36px 10px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* little caret placeholder if desired */
+.pf_sort_icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgba(0,0,0,0.6);
+}
+
+/* ---------- sliding filter sidebar + overlay ---------- */
+
+/* overlay sits under sidebar but above page content; high z-index */
+.pf_sidebar_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.38);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .28s ease, visibility .28s;
+  z-index: 12000; /* below sidebar but above all page elements and navbar */
+}
+.pf_sidebar_overlay_show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* sidebar panel: must be above navbar: very high z-index */
+.pf_sidebar {
+  position: fixed;
+  top: 0;
+  left: -360px;
+  width: 340px;
+  height: 100vh;
+  background: #fff;
+  padding: 28px;
+  box-shadow: 2px 0 30px rgba(0,0,0,0.12);
+  transition: left .32s cubic-bezier(.2,.9,.3,1);
+  overflow-y: auto;
+  z-index: 13000 !important; /* ensure above navbar */
+}
+
+/* open state */
+.pf_sidebar_open {
+  left: 0 !important;
+}
+
+/* sidebar header and close */
+.pf_sidebar_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.pf_sidebar_title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.pf_sidebar_close_btn {
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* sidebar options (simple rows) */
+.pf_sidebar_options { margin-top: 14px; }
+.pf_sidebar_option_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+/* ---------- product grid ---------- */
+.pf_products_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* desktop: 3 columns */
+  gap: 46px;
+  width: 100%;
+}
+
+/* individual card */
+.pf_product_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  text-align: center;
+}
+
+/* NEW: Wrapper for image and quick buy */
+.pf_product_image_wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px; 
+}
+
+/* product image - keep aspect, shadow and consistent size */
+.pf_product_img {
+  width: 100%;
+  height: auto;
+  max-width: 360px; 
+  border-radius: 6px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  display: block;
+  object-fit: cover;
+  transition: transform .28s ease, box-shadow .28s ease;
+}
+
+/* Subtle hover lift (desktop) */
+.pf_product_card:hover .pf_product_img {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 60px rgba(0,0,0,0.12);
+}
+
+/* NEW: Quick Buy Overlay (matches screenshot) */
+.pf_quick_buy_overlay {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  height: 0; /* Initially hidden */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; 
+  padding-bottom: 0px; 
+}
+
+/* Show on hover */
+.pf_product_card:hover .pf_quick_buy_overlay {
+  height: 25%; /* Show bottom quarter of the image */
+  opacity: 1;
+  visibility: visible;
+  padding-bottom: 15px; 
+}
+
+/* Quick Buy Button styles */
+.pf_quick_buy_btn {
+  background-color: #b88a38; /* Gold/brown color from screenshot */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 90%; 
+  border-radius: 4px;
+  transform: translateY(100%); /* Start off-screen vertically */
+  transition: transform 0.3s ease;
+}
+
+/* Animate button on hover */
+.pf_product_card:hover .pf_quick_buy_btn {
+  transform: translateY(0); /* Slide button up into view */
+}
+
+/* title & price */
+.pf_product_title {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+.pf_product_price {
+  margin-top: 6px;
+  color: #6b6b6b;
+  font-size: 14px;
+}
+
+/* ---------- small screens & responsive adjustments ---------- */
+
+/* down to 1064: two columns */
+@media (max-width: 1064px) {
+  .pf_products_grid { grid-template-columns: repeat(3, 1fr); gap: 36px; }
+  .pf_product_img { max-width: 420px; }
+}
+
+/* down to 768: top bar stacks, grid 2 columns */
+@media (max-width: 768px) {
+  .pf_topbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .pf_sort_dropdown, .pf_filter_btn { width: 100%; }
+  .pf_products_grid { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+  .pf_product_img { max-width: 100%; }
+  .pf_product_title { font-size: 15px; }
+}
+
+/* down to 420: single column grid, card centered */
+@media (max-width: 430px) {
+  .pf_products_grid { grid-template-columns: repeat(1, 1fr); gap: 28px; }
+  .pf_product_card { align-items: center; }
+  .pf_product_img {
+    width: 86%;
+    max-width: none;
+    height: auto;
+    min-height: 220px; 
+  }
+  .pf_product_title { font-size: 14px; }
+  .pf_product_price { font-size: 13px; }
+  .pf_sidebar { width: 280px; left: -300px; padding: 20px; }
+  .pf_sidebar_open { left: 0; }
+}
+
+/* ---------- small helpers ---------- */
+/* hide default select arrow on some browsers if you use custom icon */
+.pf_sort_select::-ms-expand { display: none; }

@@ -1,0 +1,94 @@
+.nk-profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.nk-profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 20px;
+    transition: background 0.2s;
+}
+
+/* Color adaptation for Scrolled vs Non-Scrolled Navbar */
+.nk-profile-trigger.light { color: white; }
+.nk-profile-trigger.dark { color: black; }
+
+.nk-avatar-icon {
+    border: 1.5px solid currentColor;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.nk-arrow-icon {
+    font-size: 10px;
+    transition: transform 0.3s;
+}
+
+.nk-dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 50px;
+    width: 275px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border: 1px solid #eee;
+    z-index: 9999;
+    padding: 10px 0;
+    color: #333;
+}
+
+.nk-menu-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+}
+
+.nk-avatar-small {
+    width: 35px;
+    height: 35px;
+    background: #f0f0f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.nk-user-email-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+}
+
+.nk-menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0;
+}
+
+.nk-menu-links li {
+    padding: 12px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.nk-menu-links li:hover {
+    background: #f8f8f8;
+    text-decoration: underline;
+}
+
+.nk-logout-btn {
+    color: #e74c3c !important;
+    font-weight: 600;
+    border-top: 1px solid #eee;
+    margin-top: 5px;
+}

@@ -1,0 +1,220 @@
+/* --- Base Styling and Dark Theme --- */
+.footer-container {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text for contrast */
+  font-family: Arial, sans-serif; /* Use a common, readable font */
+  padding: 40px 20px 20px; /* Padding for top, sides, and bottom */
+}
+
+/* --- Content Wrapper for Desktop Layout --- */
+.footer-content {
+  display: grid;
+  /* Define four columns for desktop, adjusted based on content size */
+  grid-template-columns: 1fr 1.5fr 1.5fr 2fr; 
+  gap: 40px;
+  max-width: 1200px; /* Optional: Center content on very wide screens */
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* --- Section Titles --- */
+.section-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* --- Links and Lists --- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a,
+.email-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.8; /* Slightly muted white for links */
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover,
+.email-link:hover {
+  opacity: 1;
+}
+
+/* --- CHAT WITH US Section Specifics --- */
+.section-chat-with-us p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.contact-form-link {
+  display: inline-block;
+  color: #fff;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* --- SUBSCRIBE Section Specifics --- */
+.subscribe-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.subscribe-text strong {
+  font-weight: bold;
+}
+
+/* Email Input Group Styling */
+.email-input-group {
+  display: flex;
+  border-bottom: 1px solid #fff; /* White line under the input */
+  margin-bottom: 20px;
+}
+
+.email-input {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 10px 0;
+  font-size: 14px;
+  outline: none;
+}
+
+.email-input::placeholder {
+  color: #a0a0a0; /* Lighter placeholder text */
+}
+
+.email-submit-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  padding-right: 0;
+}
+
+.mail-icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* Social Icons */
+.social-links a {
+  color: #fff;
+  font-size: 20px;
+  margin-right: 15px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.social-links a:hover {
+  opacity: 1;
+}
+
+/* --- Copyright Bar --- */
+.footer-copyright {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.6;
+  padding-top: 20px;
+  border-top: 1px solid #333; /* Separator line */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Responsiveness: Tablet/Small Desktop (e.g., 768px to 1024px) --- */
+@media (max-width: 1024px) {
+  .footer-content {
+    /* Stack the content into two rows of two columns */
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+/* --- Responsiveness: Mobile (e.g., up to 767px) --- */
+@media (max-width: 767px) {
+  .footer-content {
+    /* Stack all sections vertically in a single column */
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-section {
+    padding-bottom: 20px;
+    /* Add a subtle separator between sections on mobile */
+    border-bottom: 1px solid #1a1a1a; 
+  }
+
+  /* Remove border from the last section */
+  .footer-section:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ... Keep existing styles ... */
+
+.email-input-group {
+  display: flex;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease;
+}
+
+.email-input-group:focus-within {
+  border-bottom: 1px solid #619af2; /* Highlights line on click */
+}
+
+/* New Coupon Box Styling */
+.coupon-success-box {
+  background: #111;
+  border: 1px dashed #619af2;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-msg {
+  color: #619af2;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.coupon-text {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+.coupon-text strong {
+  color: #fff;
+  background: #222;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.sub-msg {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,113 @@
+/* src/components/AboutHero.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+
+.ah_wrapper_unique001 {
+  position: relative;
+  width: 100%;
+  height: 620px; /* desktop hero height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  top: -150px;
+}
+
+/* Background image layer */
+.ah_bg_unique001 {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform-origin: center;
+  transition: transform 12s linear;
+}
+
+/* slow ken burns effect (optional) */
+.ah_bg_unique001 {
+  animation: ah_zoom 18s ease-out infinite alternate;
+}
+@keyframes ah_zoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* dark translucent overlay to ensure white text is readable */
+.ah_overlay_unique001 {
+  position: absolute;
+  inset: 0;
+  /* background: linear-gradient(180deg, rgba(116, 115, 115, 0.55) 0%, rgba(109, 100, 100, 0.55) 100%); */
+}
+
+/* content centered horizontally and vertically */
+.ah_content_unique001 {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 1100px;
+  text-align: center;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+}
+
+/* big serif heading */
+.ah_title_unique001 {
+  font-family: 'Playfair Display', serif;
+  color: #ffffff;
+  font-size: 52px;
+  line-height: 0.95;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* subtitle */
+.ah_subtitle_unique001 {
+  font-family: 'Inter', sans-serif;
+  color: rgba(255,255,255,0.92);
+  margin: 18px 0 28px 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/* CTA styled as outlined button like screenshot */
+.ah_cta_unique001 {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,0.95);
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  transition: background 200ms, color 200ms, transform 120ms;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+/* subtle hover */
+.ah_cta_unique001:hover,
+.ah_cta_unique001:focus {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* responsive adjustments */
+@media (max-width: 1024px) {
+  .ah_wrapper_unique001 { height: 480px; }
+  .ah_title_unique001 { font-size: 56px; }
+}
+
+@media (max-width: 720px) {
+  .ah_wrapper_unique001 { height: 360px; }
+  .ah_title_unique001 { font-size: 34px; }
+  .ah_subtitle_unique001 { font-size: 15px; }
+  .ah_cta_unique001 { padding: 10px 20px; font-size: 13px; }
+}

@@ -1,0 +1,98 @@
+.cart-drawer {
+    width: 400px !important;
+}
+
+.cart-header {
+    border-bottom: 1px solid #eee;
+    font-family: 'Playfair Display', serif;
+}
+
+.cart-item-row {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+.cart-item-img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.cart-item-details h6 {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.remove-link {
+    background: none;
+    border: none;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    color: #888;
+    padding: 0;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.subtotal-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.checkout-btn {
+    width: 100%;
+    letter-spacing: 2px;
+    background-color: #000 !important;
+    border-radius: 0;
+}
+
+/* Update your existing .cart-drawer class */
+.cart-drawer {
+    width: 400px !important;
+    z-index: 2000 !important; /* Forces the drawer to show above the navbar */
+}
+
+/* Quantity Selector Styling */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    width: fit-content;
+    margin: 10px 0;
+}
+
+.quantity-control button {
+    background: none;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.quantity-control span {
+    padding: 0 10px;
+    font-size: 0.9rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+.cart-item-options {
+    font-size: 0.75rem;
+    color: #666;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}

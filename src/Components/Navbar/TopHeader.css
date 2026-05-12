@@ -1,0 +1,119 @@
+/* .top-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+ background: transparent !important;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  z-index: 10;
+}
+
+.top-left a {
+  margin-right: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  transition: opacity 0.3s ease;
+}
+
+.top-left a:hover {
+  opacity: 0.6;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.top-icon {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+} */
+
+.top-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Black text state for internal pages/scroll */
+.top-header-white {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.top-header-white a, 
+.top-header-white .top-icon {
+  color: #000 !important;
+}
+
+.top-left a {
+  margin-right: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+}
+
+.top-icon {
+  font-size: 18px;
+  color: white;
+}
+
+.top-icon:hover {
+  opacity: 0.6;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .top-header {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .top-left {
+    margin-bottom: 8px;
+  }
+
+  .top-left a {
+    margin-right: 18px;
+    font-size: 14px;
+  }
+}
+
+/* Specific adjustment for small mobile screens (425px) */
+@media screen and (max-width: 425px) {
+  .top-left {
+    display: flex;
+    flex-wrap: wrap; /* Allows links to wrap to a second line if needed */
+    justify-content: center;
+    gap: 10px; /* Controls spacing between items */
+    margin-bottom: 5px;
+  }
+
+  .top-left a {
+    margin-right: 0 !important; /* Remove margins to use gap instead */
+    font-size: 11px !important; /* Smaller font for Top Header links */
+    letter-spacing: 0.3px;
+  }
+
+  .top-right {
+    gap: 15px; /* Slightly tighter spacing for social icons */
+  }
+
+  .top-icon {
+    font-size: 12px !important; /* Slightly smaller icons */
+  }
+}
+
