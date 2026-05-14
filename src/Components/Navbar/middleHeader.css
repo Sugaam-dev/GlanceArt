@@ -1,6 +1,5 @@
 .main-header-wrapper {
     position: absolute;
-    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
@@ -8,6 +7,39 @@
     transition: background-color 0.3s ease, color 0.3s ease;
     background: transparent;
 }
+
+/* ==========================================
+   BURGER MENU COLOR TOGGLE
+   ========================================== */
+
+/* Default State (Transparent background - White Burger) */
+.main-header-wrapper .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.main-header-wrapper .navbar-toggler-icon {
+    /* Turns the default icon into pure white */
+    filter: brightness(0) invert(1); 
+}
+
+/* Scrolled State (White background - Black Burger) */
+.main-header-wrapper.scrolled .navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.main-header-wrapper.scrolled .navbar-toggler-icon {
+    /* Resets the icon to black */
+    filter: brightness(0) invert(0);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ==========================================
+   SCROLLED HEADER STYLES
+   ========================================== */
 
 .main-header-wrapper.scrolled,
 .main-header-wrapper.force-white {
@@ -19,7 +51,7 @@
 
 .middle-header {
     width: 100%;
-    padding: 10px 0; /* Slightly reduced padding for a sleeker look */
+    padding: 10px 0;
 }
 
 .header-container {
@@ -39,7 +71,7 @@
 }
 
 .header-center {
-    flex: 0; /* No longer used for content, but stays to maintain flex structure */
+    flex: 0;
 }
 
 .header-right {
@@ -51,7 +83,7 @@
 }
 
 .nav-logo {
-    height: 100px; /* Adjust height based on your new logo's aspect ratio */
+    height: 100px;
     width: auto;
     transition: height 0.3s ease;
 }
@@ -99,7 +131,7 @@
     }
 
     .nav-logo {
-        height: 40px;
+        height: 60px; /* Adjusted from 40px for better visibility */
     }
 
     .header-right {
