@@ -69,7 +69,7 @@ export default function CustomNavbar({ isScrolled }) {
             </NavDropdown> */}
 
             <NavDropdown 
-                title={<span onClick={() => window.location.href = '/shop-by-nook'} style={{ cursor: 'pointer' }}>STYLE YOUR SPACE</span>} 
+                title={<span onClick={() => window.location.href = '/shop-by-nook'} style={{ cursor: 'pointer' }}>STYLE YOUR</span>} 
                 id="nook-drop" 
                 className="nav-item-custom dropdown-custom nook-dropdown"
             >
