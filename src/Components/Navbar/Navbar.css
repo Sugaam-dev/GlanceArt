@@ -67,8 +67,8 @@
    ========================================== */
 
 .collections-dropdown .dropdown-menu {
-  width: 620px !important;
-  padding: 20px 15px;
+  width: 820px !important;
+  padding: 15px 25px;
   background: white !important;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.12);
@@ -176,6 +176,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@media (max-width: 1200px){
+  .navbar-items {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1024px){
+  .navbar-items {
+    gap: 1px;
+  }
 }
 
 /* Responsive adjustments for Mobile */
@@ -447,4 +459,16 @@
     .navbar-nav {
         padding-bottom: 100px; /* Extra space at bottom for better mobile feel */
     }
+}
+
+/* Scrolled state links */
+.scrolled-nav .nav-item-custom,
+.scrolled-nav .nav-item-custom > a,
+.scrolled-nav .navbar-nav .nav-link {
+  color: #000000 !important;
+}
+
+/* Ensure the line under links also turns black */
+.scrolled-nav .nav-item-custom::after {
+  background: #000000;
 }

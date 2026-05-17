@@ -3,138 +3,117 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    color: #ffffff;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease;
     background: transparent;
 }
 
-/* ==========================================
-   BURGER MENU COLOR TOGGLE
-   ========================================== */
-
-/* Default State (Transparent background - White Burger) */
-.main-header-wrapper .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.main-header-wrapper .navbar-toggler-icon {
-    /* Turns the default icon into pure white */
-    filter: brightness(0) invert(1); 
-}
-
-/* Scrolled State (White background - Black Burger) */
-.main-header-wrapper.scrolled .navbar-toggler {
-    border-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-.main-header-wrapper.scrolled .navbar-toggler-icon {
-    /* Resets the icon to black */
-    filter: brightness(0) invert(0);
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* ==========================================
-   SCROLLED HEADER STYLES
-   ========================================== */
-
-.main-header-wrapper.scrolled,
-.main-header-wrapper.force-white {
+/* Fix for other pages: push content down instead of overlapping white space */
+.main-header-wrapper.not-home {
+    position: relative;
     background-color: #ffffff !important;
-    color: #000000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
 }
 
-.middle-header {
-    width: 100%;
-    padding: 10px 0;
+.main-header-wrapper.scrolled {
+    background-color: #ffffff !important; 
+    position: fixed;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 10px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
-.header-left {
-    flex: 1;
+/* Centering Logic: Left and Right must be equal flex to center the middle */
+.header-left, .header-right {
+    flex: 1; 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-}
-
-.header-center {
-    flex: 0;
 }
 
 .header-right {
-    flex: 1;
-    display: flex;
-    align-items: center;
     justify-content: flex-end;
     gap: 20px;
 }
 
-.nav-logo {
-    height: 100px;
-    width: auto;
-    transition: height 0.3s ease;
-}
-
-.logo-link {
+/* CENTER SCRIPT TEXT - Dead Center */
+.header-center {
+    flex: 0 0 auto;
     display: flex;
-    align-items: center;
-    text-decoration: none;
+    justify-content: center;
 }
 
-/* Account & Cart Buttons */
-.account-button,
-.cart-button {
+.center-script-img {
+    height: 80px; 
+    width: auto;
+}
+
+/* SIDE LOGO - FIXED SIZE & OVERLAP */
+.overlapping-left-logo {
+    height: 100px; 
+    width: auto;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    z-index: 1200;
+    object-fit: contain;
+}
+
+/* Keep same size after scroll */
+.main-header-wrapper.scrolled .overlapping-left-logo {
+    top: 10px;
+    height: 120px;
+}
+
+/* BURGER MENU COLORS */
+.main-header-wrapper .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    padding: 3px;
+}
+.main-header-wrapper .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.main-header-wrapper.scrolled .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0.8) !important;
+}
+.main-header-wrapper.scrolled .navbar-toggler-icon {
+    filter: brightness(0);
+}
+
+/* ICONS COLORS */
+.account-button, .cart-button {
     background: none;
     border: none;
-    padding: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    position: relative;
-    color: inherit;
+    color: #ffffff;
 }
 
-.account-button svg,
-.cart-button svg {
-    stroke: currentColor;
-    transition: opacity 0.2s ease;
+.main-header-wrapper.scrolled .account-button,
+.main-header-wrapper.scrolled .cart-button {
+    color: #000000;
 }
 
-.cart-dot {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 10px;
-    height: 10px;
-    background-color: #0b4d82;
-    border-radius: 50%;
-    border: 2px solid #ffffff;
-}
-
-/* Responsive Adjustments */
+/* MOBILE RESPONSIVENESS */
 @media (max-width: 991px) {
-    .header-container {
-        padding: 0 20px;
+    .header-left { gap: 5px; }
+    .logo-wrapper { width: 65px; }
+
+    .overlapping-left-logo {
+        position: relative;
+        height: 50px;
+        top: 0;
+    }
+    .main-header-wrapper.scrolled .overlapping-left-logo {
+        top: 0px;
+        left: 0px;
+        height: 70px;
     }
 
-    .nav-logo {
-        height: 60px; /* Adjusted from 40px for better visibility */
-    }
-
-    .header-right {
-        gap: 10px;
-    }
+    .center-script-img { height: 45px; }
+    .header-container { padding: 5px; }
 }
