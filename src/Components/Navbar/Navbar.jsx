@@ -36,7 +36,7 @@ export default function CustomNavbar({ isScrolled }) {
                 <a href="/landscape" className="collection-item"><img src="/assets/images/gallary4.webp" alt="Landscape" /><span>Landscape</span></a>
                 <a href="/geometric" className="collection-item"><img src="/assets/images/gallary5.webp" alt="Geometric" /><span>Geometric</span></a>
                  <a href="/landscape" className="collection-item"><img src="/assets/images/gallary4.webp" alt="Landscape" /><span>Contemporary</span></a>
-                <a href="/geometric" className="collection-item"><img src="/assets/images/gallary5.webp" alt="Geometric" /><span>Folk Art</span></a>
+                <a href="/photography" className="collection-item"><img src="/assets/images/gallary3.webp" alt="Photography" /><span>Folk Art</span></a>
               </div>
             </NavDropdown>
 
