@@ -35,6 +35,8 @@ import ShopOtpPage from '../Pages/LogInPages/ShopOtpPage.jsx';
 import ProfilePage from '../Components/Navbar/ProfilePage.jsx';
 import WishlistPage from '../Components/Context/WishlistPage.jsx';
 import Checkout from '../Components/Context/Checkout.jsx';
+import ContemporaryPage from '../Pages/AllCollection/ContemporaryMain.jsx';
+import FolkArtPage from '../Pages/AllCollection/FolkArtMain.jsx';
 
 const AppRouter = () => {
   return (
@@ -76,6 +78,10 @@ const AppRouter = () => {
              <Route path="/landscape" element={<LandscapeMainPage />} />
 
              <Route path="/geometric" element={<GeometricMainPage />} />
+
+             <Route path="/contemporary" element={<ContemporaryPage />} />
+
+             <Route path="/folk-art" element={<FolkArtPage />} />
 
              <Route path="/artist/van-gogh" element={<VanGoghMain />} />
 
