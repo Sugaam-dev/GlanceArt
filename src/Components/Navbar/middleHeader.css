@@ -7,7 +7,6 @@
     background: transparent;
 }
 
-/* Fix for other pages: push content down instead of overlapping white space */
 .main-header-wrapper.not-home {
     position: relative;
     background-color: #ffffff !important;
@@ -29,7 +28,6 @@
     position: relative;
 }
 
-/* Centering Logic: Left and Right must be equal flex to center the middle */
 .header-left, .header-right {
     flex: 1; 
     display: flex;
@@ -41,7 +39,6 @@
     gap: 20px;
 }
 
-/* CENTER SCRIPT TEXT - Dead Center */
 .header-center {
     flex: 0 0 auto;
     display: flex;
@@ -53,7 +50,6 @@
     width: auto;
 }
 
-/* SIDE LOGO - FIXED SIZE & OVERLAP */
 .overlapping-left-logo {
     height: 100px; 
     width: auto;
@@ -64,30 +60,51 @@
     object-fit: contain;
 }
 
-/* Keep same size after scroll */
 .main-header-wrapper.scrolled .overlapping-left-logo {
     top: 10px;
     height: 120px;
 }
 
-/* BURGER MENU COLORS */
-.main-header-wrapper .navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.8) !important;
-    padding: 3px;
-}
-.main-header-wrapper .navbar-toggler-icon {
-    filter: brightness(0) invert(1);
-}
-
-.main-header-wrapper.scrolled .navbar-toggler {
-    border: 1px solid rgba(0, 0, 0, 0.8) !important;
-}
-.main-header-wrapper.scrolled .navbar-toggler-icon {
-    filter: brightness(0);
+/* CART BADGE STYLING */
+.cart-button {
+    background: none;
+    border: none;
+    color: #ffffff;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* ICONS COLORS */
-.account-button, .cart-button {
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Dark badge for light background (scrolled) */
+.badge-dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* Light badge for dark background (home transparent) */
+.badge-light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.account-button {
     background: none;
     border: none;
     color: #ffffff;
@@ -116,4 +133,9 @@
 
     .center-script-img { height: 45px; }
     .header-container { padding: 5px; }
+    
+    .cart-badge {
+        top: -5px;
+        right: -8px;
+    }
 }
