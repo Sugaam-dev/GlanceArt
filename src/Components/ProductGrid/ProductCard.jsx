@@ -10,11 +10,7 @@ export default function ProductCard({ product, onOpen }) {
         <div className="pg-quick-overlay">
           <button
             className="pg-quick-btn"
-            onClick={(e) => {
-              e.stopPropagation(); // don't open modal if quick buy clicked
-              // dispatch quick buy - placeholder event; actual action in parent
-              const event = new CustomEvent("quickBuy", { detail: product });
-              window.dispatchEvent(event);
+            onClick={(e) => { e.stopPropagation(); onOpen(product); 
             }}
           >
             Quick Buy
