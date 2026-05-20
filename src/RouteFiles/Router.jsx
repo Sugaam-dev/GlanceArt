@@ -114,6 +114,8 @@ const AppRouter = () => {
            <Route path="/wishlist" element={<WishlistPage />} />
 
            <Route path="/checkout" element={<Checkout />} />
+
+           <Route path='/ProfileDropdown' element={<ProfilePage />} />
       
             {/* Add other page routes here */}
             {/* <Route path="/shop" element={<ShopPage />} /> */}

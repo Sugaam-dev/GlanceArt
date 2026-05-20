@@ -80,7 +80,7 @@ const LoginPage = () => {
 
       <div className="nk-login-card">
         <header className="nk-logo-group">
-          <h1 className="nk-visual-logo">ARTGALLARY</h1>
+          <h1 className="nk-visual-logo">GLANCE ART</h1>
           <span className="nk-domain-tag">glanceart.com</span>
         </header>
 

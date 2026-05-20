@@ -182,10 +182,10 @@ const ShopByNookMain = () => {
       <section className="nook-description-wrapper">
         <div className="nook-description-content">
           <div className="decorative-line top-line"></div>
-          <h2 className="nook-main-title">SHOP BY NOOK</h2>
+          <h2 className="nook-main-title">SHOP BY GLANCE ART</h2>
           <p className="nook-subtext">
             Thoughtfully curated wall art for every corner of your home — whether it's your 
-            bedroom, bath, or cozy nook.
+            bedroom, bath, or cozy Glance Art.
           </p>
           <div className="decorative-line bottom-line"></div>
         </div>
