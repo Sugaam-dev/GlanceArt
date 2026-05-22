@@ -64,7 +64,7 @@ const Register = () => {
     <div className="auth-page-wrapper">
       <div className="auth-card">
         <header className="auth-card-header">
-          <span className="shop-logo">shop</span>
+          <span className="shop-logo">SIGN UP</span>
           <span className="brand-subtext">Glance Art</span>
         </header>
 

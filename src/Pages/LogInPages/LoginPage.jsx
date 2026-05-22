@@ -128,7 +128,7 @@ const LoginPage = () => {
           type="button"
           onClick={() => navigate('/login/shop')}
         >
-          Sign in with <span className="nk-shop-italic">shop</span>
+          Sign Up
         </button>
       </div>
     </div>

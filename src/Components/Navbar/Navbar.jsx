@@ -26,7 +26,7 @@ export default function CustomNavbar({ isScrolled }) {
         <Navbar.Collapse id="main-navbar" className="justify-content-center">
           <Nav className="navbar-items">
              <Nav.Link href="/about" className="nav-item-custom">ABOUT US</Nav.Link> 
-            <Nav.Link href="/collections" className="nav-item-custom">FRESH LOUNCH</Nav.Link>
+            <Nav.Link href="/collections" className="nav-item-custom">FRESH LAUNCH</Nav.Link>
 
             <NavDropdown title="COLLECTIONS" id="coll-drop" className="nav-item-custom dropdown-custom collections-dropdown">
               <div className="collection-grid">
