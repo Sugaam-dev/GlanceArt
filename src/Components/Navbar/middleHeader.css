@@ -1,37 +1,57 @@
+/* ==========================================================================
+   MAIN WRAPPER & NAVIGATION MODES
+   ========================================================================== */
+
 .main-header-wrapper {
     position: absolute;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    color: #ffffff; /* DEFAULT: white icons/text on hero */
+    transition: background-color 0.3s ease, color 0.3s ease;
     background: transparent;
 }
 
-.main-header-wrapper.not-home {
-    position: relative;
+/* Scrolled State (Sticky White Background) */
+.main-header-wrapper.scrolled,
+.main-header-wrapper.force-white {
     background-color: #ffffff !important;
+    color: #000000; /* AFTER SCROLL: black icons/text */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
 }
 
-.main-header-wrapper.scrolled {
-    background-color: #ffffff !important; 
-    position: fixed;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* ==========================================================================
+   MIDDLE HEADER LAYOUT
+   ========================================================================== */
+
+.middle-header {
+    width: 100%;
+    padding: 15px 0;
 }
 
 .header-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 10px 40px;
+    padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    flex-wrap: nowrap !important;
 }
 
-.header-left, .header-right {
-    flex: 1; 
+/* Fixed Column Widths to keep Logo perfectly Centered */
+.header-left,
+.header-right {
+    flex: 1;
     display: flex;
     align-items: center;
+}
+
+.header-center {
+    flex: 0 0 auto;
+    text-align: center;
 }
 
 .header-right {
@@ -39,103 +59,209 @@
     gap: 20px;
 }
 
-.header-center {
-    flex: 0 0 auto;
+.nav-logo {
+    height: 60px;
+    width: auto;
+    transition: height 0.3s ease;
+}
+
+/* ==========================================================================
+   LEFT SECTION: SOCIAL ICONS
+   ========================================================================== */
+
+.social-icons-wrapper {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    gap: 15px;
 }
 
-.center-script-img {
-    height: 80px; 
-    width: auto;
+.social-link {
+    color: inherit; /* white before scroll, black after */
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.overlapping-left-logo {
-    height: 100px; 
-    width: auto;
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    z-index: 1200;
-    object-fit: contain;
+.social-link:hover {
+    opacity: 0.7;
+    transform: translateY(-2px);
 }
 
-.main-header-wrapper.scrolled .overlapping-left-logo {
-    top: 10px;
-    height: 120px;
-}
+/* ==========================================================================
+   RIGHT SECTION: PROFILE & CART ICONS (FIXED)
+   ========================================================================== */
 
-/* CART BADGE STYLING */
+.account-button,
 .cart-button {
     background: none;
     border: none;
-    color: #ffffff;
-    padding: 0;
+    padding: 8px;
+    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    position: relative;
+    color: inherit; /* ← inherits from header */
 }
 
-.cart-badge {
+.account-button svg,
+.cart-button svg {
+    stroke: currentColor; /* ← sync with text color */
+    transition: opacity 0.2s ease, stroke 0.3s ease;
+}
+
+.account-button:hover svg,
+.cart-button:hover svg {
+    opacity: 0.6;
+}
+
+/* Cart Notification Dot */
+.cart-dot {
     position: absolute;
-    top: -8px;
-    right: -10px;
-    min-width: 18px;
-    height: 18px;
-    font-size: 10px;
-    font-weight: bold;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #0b4d82;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2px;
-    transition: all 0.3s ease;
+    border: 2px solid #ffffff;
 }
 
-/* Dark badge for light background (scrolled) */
-.badge-dark {
-    background-color: #000000;
-    color: #ffffff;
+/* After scroll → keep dot border clean */
+.main-header-wrapper.scrolled .cart-dot,
+.main-header-wrapper.force-white .cart-dot {
+    border-color: #ffffff;
 }
 
-/* Light badge for dark background (home transparent) */
-.badge-light {
-    background-color: #ffffff;
-    color: #000000;
+/* ==========================================================================
+   MOBILE & RESPONSIVE STYLES
+   ========================================================================== */
+
+/* Burger Menu Toggle */
+.navbar-toggler {
+    border: none !important;
+    padding: 0;
+    color: inherit;
 }
 
-.account-button {
-    background: none;
-    border: none;
-    color: #ffffff;
+.navbar-toggler-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1); /* white before scroll */
+    transition: filter 0.3s ease;
 }
 
-.main-header-wrapper.scrolled .account-button,
-.main-header-wrapper.scrolled .cart-button {
-    color: #000000;
+.main-header-wrapper.scrolled .navbar-toggler-icon,
+.main-header-wrapper.force-white .navbar-toggler-icon {
+    filter: invert(0); /* black after scroll */
 }
 
-/* MOBILE RESPONSIVENESS */
 @media (max-width: 991px) {
-    .header-left { gap: 5px; }
-    .logo-wrapper { width: 65px; }
-
-    .overlapping-left-logo {
-        position: relative;
-        height: 50px;
-        top: 0;
-    }
-    .main-header-wrapper.scrolled .overlapping-left-logo {
-        top: 0px;
-        left: 0px;
-        height: 70px;
+    .header-container {
+        padding: 0 20px;
     }
 
-    .center-script-img { height: 45px; }
-    .header-container { padding: 5px; }
-    
-    .cart-badge {
-        top: -5px;
-        right: -8px;
+    .nav-logo {
+        height: 45px;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-burger-wrapper {
+        display: block !important;
+    }
+
+    /* Mobile Dropdown Menu */
+    .navbar-collapse {
+        background-color: #ffffff !important;
+        padding: 20px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 }
+
+/* ==========================================================================
+   HERO CAROUSEL GAP FIX
+   ========================================================================== */
+
+.hero-carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin-top: 0;
+    z-index: 1;
+}
+
+@media (max-width: 991px){
+    .header-right {
+        gap: 0px;
+    }
+}
+
+/* =========================================
+   TOGGLE + SMALL LOGO
+========================================= */
+
+.toggle-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* REMOVE DEFAULT BORDER */
+.custom-navbar-toggle {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.custom-navbar-toggle:focus {
+  box-shadow: none !important;
+}
+
+/* HAMBURGER ICON */
+.custom-navbar-toggle .navbar-toggler-icon {
+  width: 80px;
+  height: 80px;
+  filter: brightness(0) invert(1);
+}
+
+/* SMALL LOGO */
+.small-side-logo {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+
+  position: absolute;
+
+  /* Adjust these values */
+  top: 25px;
+  left: 25px;
+
+  z-index: 9999;
+
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+
+  .small-side-logo {
+    width: 45px;
+    height: 45px;
+    top: 20px;
+    left: 45px;
+  }
+
+  .custom-navbar-toggle .navbar-toggler-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
