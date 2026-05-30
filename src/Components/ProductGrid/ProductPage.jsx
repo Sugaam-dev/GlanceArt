@@ -236,12 +236,12 @@ import { useNavigate, useLocation } from "react-router-dom";
 // then pass it in the `selections` object inside computePrice below.
 const PRICING_CONFIG = {
   sizes: {
-    XS:  { type: "percent", value: 0  },
-    S:   { type: "percent", value: 10 },
-    M:   { type: "percent", value: 20 },
-    L:   { type: "percent", value: 35 },
-    XL:  { type: "percent", value: 50 },
-    XXL: { type: "percent", value: 70 },
+    A4:  { type: "percent", value: 0  },
+    A3:   { type: "percent", value: 10 },
+    A2:   { type: "percent", value: 20 },
+    A1:   { type: "percent", value: 35 },
+    // XL:  { type: "percent", value: 50 },
+    // XXL: { type: "percent", value: 70 },
   },
   materials: {
     "WHITE CANVAS": { type: "percent", value: 0  },
