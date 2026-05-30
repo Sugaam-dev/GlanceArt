@@ -500,17 +500,17 @@ export default function ProductPage({ product: propProduct = dummyProduct }) {
             <div className="pp-timeline">
               <div className="pp-timeline-step">
                 <div className="pp-timeline-icon"></div>
-                <div className="pp-timeline-label">Dec 12</div>
+                <div className="pp-timeline-label">Day 1</div>
                 <div className="pp-timeline-date">Ordered</div>
               </div>
               <div className="pp-timeline-step">
                 <div className="pp-timeline-icon" style={{ background: "#ddd" }}></div>
-                <div className="pp-timeline-label">Dec 15 - 17</div>
+                <div className="pp-timeline-label">Day 4</div>
                 <div className="pp-timeline-date">Ready</div>
               </div>
               <div className="pp-timeline-step">
                 <div className="pp-timeline-icon" style={{ background: "#ddd" }}></div>
-                <div className="pp-timeline-label">Dec 20 - 24</div>
+                <div className="pp-timeline-label">Day 6 - 7</div>
                 <div className="pp-timeline-date">Delivered</div>
               </div>
             </div>
